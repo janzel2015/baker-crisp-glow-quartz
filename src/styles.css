@@ -102,3 +102,167 @@
     min-height: 38rem;
   }
 }
+
+
+/* Mobile-first Freedom FM app layout */
+.mobile-bottom-nav {
+  display: none;
+}
+@media (max-width: 767px) {
+  html { scroll-padding-bottom: 5.5rem; }
+  body { padding-bottom: 4.75rem; }
+  .freedom-broadcast header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+  }
+  .freedom-broadcast header > div {
+    min-height: 4.25rem;
+    padding-top: .65rem;
+    padding-bottom: .65rem;
+  }
+  .freedom-broadcast header > div > a span:first-child {
+    font-size: 1.55rem;
+    font-weight: 700;
+  }
+  .freedom-broadcast header > div > a span:last-child {
+    font-size: .62rem;
+  }
+  .freedom-broadcast header > div > nav { display: none; }
+  .freedom-broadcast header > div > div {
+    margin-left: auto;
+    gap: .35rem;
+  }
+  .freedom-broadcast header > div > div button {
+    min-height: 2.55rem;
+    padding: .45rem .65rem;
+    font-size: .7rem;
+  }
+  .mobile-top-links { display: none !important; }
+  .freedom-broadcast main > section:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    padding: 1.5rem 1rem 1.35rem;
+  }
+  .freedom-broadcast main > section:first-child h1 {
+    margin-top: .55rem;
+    font-size: clamp(4.4rem, 19vw, 6rem);
+    font-weight: 700;
+  }
+  .freedom-broadcast main > section:first-child p:nth-of-type(2) {
+    margin-top: .15rem;
+    font-size: 2.2rem;
+  }
+  .freedom-broadcast main > section:first-child p:nth-of-type(3) {
+    margin-top: .85rem;
+    font-size: .95rem;
+    line-height: 1.5;
+  }
+  .freedom-broadcast main > section:first-child > div > div {
+    margin-top: 1.1rem;
+  }
+  .freedom-broadcast main > section:first-child figure img {
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+  }
+  .freedom-broadcast #air {
+    margin: 0 1rem;
+    border-radius: 1.1rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgb(16 17 20 / 12%);
+  }
+  .freedom-broadcast #air > div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.1rem;
+  }
+  .freedom-broadcast #air > div:first-child > div:first-child {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid rgb(255 255 255 / 15%);
+    padding-bottom: .8rem;
+  }
+  .freedom-broadcast #air > div:first-child > div:first-child p:last-child {
+    font-size: 2rem;
+  }
+  .freedom-broadcast #air > div:first-child > div p:nth-child(2) {
+    font-size: 1.35rem;
+  }
+  .freedom-broadcast #clip,
+  .freedom-broadcast #programs,
+  .freedom-broadcast #board,
+  .freedom-broadcast #station,
+  .freedom-broadcast #line {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+  .freedom-broadcast #clip > div,
+  .freedom-broadcast #programs > div,
+  .freedom-broadcast #board > div,
+  .freedom-broadcast #station > div,
+  .freedom-broadcast #line > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .freedom-broadcast #clip .booth-clip {
+    width: 100%;
+    max-width: 100%;
+    min-height: 34rem;
+    aspect-ratio: 267 / 591;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .freedom-broadcast #programs article {
+    border-radius: .8rem;
+    margin-bottom: .5rem;
+  }
+  .freedom-broadcast #board > div > div:nth-child(2) {
+    gap: .25rem;
+  }
+  .freedom-broadcast #board > div > div:nth-child(2) button {
+    min-width: 0;
+    border-radius: .45rem;
+    font-size: .75rem;
+  }
+  .freedom-broadcast #station img {
+    border-radius: .9rem;
+  }
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: 4.45rem;
+    padding: .45rem .25rem max(.45rem, env(safe-area-inset-bottom));
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    background: #101114;
+    color: #fff;
+    box-shadow: 0 -8px 24px rgb(0 0 0 / 16%);
+  }
+  .mobile-bottom-nav a {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .mobile-bottom-nav a:first-child {
+    color: #ef292f;
+  }
+  .mobile-bottom-nav a svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .freedom-broadcast footer {
+    padding-bottom: 1.5rem;
+  }
+}
