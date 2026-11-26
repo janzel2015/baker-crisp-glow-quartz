@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { K as require_react, b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Pause, c as ArrowUpRight, i as Play, n as Trash2, o as MapPin, r as Radio, s as Mail } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BE9LBYQd.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Br76Ohlr.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var STATION = {
@@ -16,7 +16,9 @@ var STATION = {
 	web: "https://www.freedomonlineradio.com",
 	webLabel: "freedomonlineradio.com",
 	facebook: "https://www.facebook.com/104.1freedomradio",
-	maps: "https://maps.google.com/?q=6+Pag-antayan+Cantilan+Surigao+del+Sur"
+	maps: "https://maps.google.com/?q=6+Pag-antayan+Cantilan+Surigao+del+Sur",
+	video: "https://www.facebook.com/104.1freedomradio/videos/2237158751012506/",
+	videoEmbed: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F104.1freedomradio%2Fvideos%2F2237158751012506%2F&show_text=true&width=267&t=0"
 };
 var DAYS = [
 	{
@@ -430,7 +432,10 @@ var COPY = {
 		empty: "No notes yet. The first one will sit here.",
 		pinned: "On this device",
 		remove: "Remove",
-		footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Not a substitute for the station’s own log."
+		footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Not a substitute for the station’s own log.",
+		videoTitle: "From the booth",
+		videoDek: "The latest clip on the station’s Facebook page.",
+		watch: "Open on Facebook"
 	},
 	bi: {
 		navAir: "Karon",
@@ -466,7 +471,10 @@ var COPY = {
 		empty: "Wala pay nota. Ang una maglingkod dinhi.",
 		pinned: "Niining device",
 		remove: "Tangtanga",
-		footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Dili kini kapuli sa log sa estasyon."
+		footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Dili kini kapuli sa log sa estasyon.",
+		videoTitle: "Gikan sa booth",
+		videoDek: "Ang pinakabag-ong clip sa Facebook sa estasyon.",
+		watch: "Ablihi sa Facebook"
 	}
 };
 var NOTES_KEY = "freedom-fm-notes";
@@ -806,6 +814,43 @@ function FreedomFm() {
 								children: ID_LINE
 							})]
 						}) : null]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+						id: "clip",
+						className: "border-b border-ink/10",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 md:grid-cols-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs tracking-widest text-ink/50",
+									children: "FACEBOOK"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+									className: "mt-3 font-display text-4xl leading-tight sm:text-5xl",
+									children: t.videoTitle
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "mt-3 max-w-md text-ink/70",
+									children: t.videoDek
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: STATION.video,
+									target: "_blank",
+									rel: "noreferrer",
+									className: "mt-6 inline-flex min-h-11 items-center text-sm font-medium underline decoration-ink/30 underline-offset-4",
+									children: t.watch
+								})
+							] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "booth-clip mx-auto bg-ink/5",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
+									src: STATION.videoEmbed,
+									title: "104.1 Freedom Radio on Facebook",
+									scrolling: "no",
+									allow: "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share",
+									allowFullScreen: true
+								})
+							})]
+						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 						id: "programs",
