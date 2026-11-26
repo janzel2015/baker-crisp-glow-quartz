@@ -16,42 +16,7 @@ type Note = { id: string; name: string; message: string; at: string };
 const NOTES_KEY = "freedom-fm-notes";
 const LANG_KEY = "freedom-fm-lang";
 
-const ID_LINE =
-  "You are listening to DXFR. One oh four point one. Freedom FM. Cantilan, Surigao del Sur. The first advocacy radio in the Surigao provinces. Hope, liberty, and love for the land. Stay tuned.";
-
-function playIdent() {
-  const AC =
-    window.AudioContext ||
-    (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-  if (AC) {
-    const ctx = new AC();
-    const master = ctx.createGain();
-    master.gain.value = 0.18;
-    master.connect(ctx.destination);
-    [196, 247, 294, 392].forEach((freq, i) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = "triangle";
-      osc.frequency.value = freq;
-      osc.connect(gain);
-      gain.connect(master);
-      const t = ctx.currentTime + i * 0.16;
-      gain.gain.setValueAtTime(0.0001, t);
-      gain.gain.exponentialRampToValueAtTime(0.9, t + 0.04);
-      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.85);
-      osc.start(t);
-      osc.stop(t + 0.9);
-    });
-    window.setTimeout(() => void ctx.close(), 2200);
-  }
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-    const line = new SpeechSynthesisUtterance(ID_LINE);
-    line.rate = 0.92;
-    line.pitch = 0.86;
-    window.setTimeout(() => window.speechSynthesis.speak(line), 700);
-  }
-}
+const STREAM_URL = import.meta.env.VITE_STREAM_URL as string | undefined;
 
 function formatWhen(start: string, end: string) {
   return `${start}–${end}`;
@@ -62,7 +27,8 @@ export function FreedomFm() {
   const [now, setNow] = useState<Date | null>(null);
   const [dayPick, setDayPick] = useState<number | null>(null);
   const [playing, setPlaying] = useState(false);
-  const stopTimer = useRef<number | null>(null);
+  const [streamError, setStreamError] = useState("");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [notes, setNotes] = useState<Note[]>([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -90,16 +56,25 @@ export function FreedomFm() {
   const day = dayPick ?? todayIndex;
   const board = useMemo(() => blocksOn(day), [day]);
 
-  function toggleListen() {
-    if (stopTimer.current) window.clearTimeout(stopTimer.current);
+  async function toggleListen() {
+    const audio = audioRef.current;
+    if (!audio || !STREAM_URL) {
+      setStreamError("Live stream URL is not configured. Add VITE_STREAM_URL to the deployment environment.");
+      return;
+    }
     if (playing) {
-      window.speechSynthesis?.cancel();
+      audio.pause();
       setPlaying(false);
       return;
     }
-    playIdent();
-    setPlaying(true);
-    stopTimer.current = window.setTimeout(() => setPlaying(false), 14000);
+    setStreamError("");
+    try {
+      await audio.play();
+      setPlaying(true);
+    } catch {
+      setPlaying(false);
+      setStreamError("The live stream could not start. Check the stream URL and try again.");
+    }
   }
 
   function switchLang(next: Lang) {
@@ -142,7 +117,7 @@ export function FreedomFm() {
     : null;
 
   return (
-    <div className="min-h-screen bg-paper text-ink">
+    <div className="min-h-screen bg-paper text-ink freedom-broadcast">\n      <audio ref={audioRef} src={STREAM_URL || undefined} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setPlaying(false); setStreamError("Unable to connect to the live stream."); }} />
       <header className="sticky top-0 z-20 border-b border-ink/10 bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
           <a href="#top" className="flex items-baseline gap-2">
@@ -301,7 +276,7 @@ export function FreedomFm() {
                   style={{ animationDelay: `${(i % 7) * 0.08}s` }}
                 />
               ))}
-              <p className="ml-4 max-w-xl text-sm leading-relaxed text-paper/80">{ID_LINE}</p>
+              <p className="ml-4 max-w-xl text-sm leading-relaxed text-paper/80">{streamError || "DXFR 104.1 · LIVE RADIO"}</p>
             </div>
           ) : null}
         </section>
