@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Newsreader";
+        font-style: normal;
+        font-weight: 500 600;
+        font-display: block;
+        src: url("./og-fonts/newsreader-normal-500.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Newsreader";
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url("./og-fonts/newsreader-italic-500.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: block;
+        src: url("./og-fonts/outfit-normal-500.woff2") format("woff2");
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        background: #f3eee6;
+        color: #141816;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lockup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .kicker {
+        font-family: Outfit, "Liberation Sans", sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: 0.46em;
+        text-indent: 0.46em;
+        color: #5c6b73;
+      }
+      .rule {
+        width: 48px;
+        height: 1px;
+        margin: 20px 0 26px;
+        background: #5c6b73;
+      }
+      .freq {
+        font-family: Newsreader, "Liberation Serif", Georgia, serif;
+        font-weight: 500;
+        font-size: 268px;
+        line-height: 0.76;
+        letter-spacing: -0.05em;
+      }
+      .pt {
+        color: #b42318;
+      }
+      .name {
+        margin-top: 30px;
+        font-family: Outfit, "Liberation Sans", sans-serif;
+        font-weight: 500;
+        font-size: 32px;
+        letter-spacing: 0.42em;
+        text-indent: 0.42em;
+      }
+      .place {
+        margin-top: 16px;
+        font-family: Newsreader, "Liberation Serif", Georgia, serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 1;
+      }
+      .air {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 34px;
+        color: #5c6b73;
+        font-family: Outfit, "Liberation Sans", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+      }
+      .lamp {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #b42318;
+        flex: none;
+      }
+      .lab {
+        letter-spacing: 0.36em;
+        padding-left: 0.36em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lockup">
+      <p class="kicker">DXFR</p>
+      <div class="rule"></div>
+      <p class="freq">104<span class="pt">.</span>1</p>
+      <p class="name">FREEDOM FM</p>
+      <p class="place">Cantilan</p>
+      <p class="air"><span class="lamp"></span><span class="lab">ON AIR</span></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Freedom FM 104.1",
+      "hasCanvas": false,
+      "bodyTextLen": 3000,
+      "bodyTextHash": "61230083838bedf30b53602c5132d8cb26eb4d2021f3ece416102c26a2631a0f",
+      "bodyTextPrefix": "104.1 FREEDOM FM On air Programs Schedule Station Listener line ",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "ErrorUtils caught an error:\n\nCannot listen to an undefined element. [Caught in: Tried to listen to element of type click]\n\nSubsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 180, clientTime: 1795658612, extra: Object, guardList: Array(2), hash: uabswd}"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Freedom FM 104.1",
+      "hasCanvas": false,
+      "bodyTextLen": 3000,
+      "bodyTextHash": "5c79143ac122cee3d8dd904d5033934efaefe4262e57e7e85572616a8a15940f",
+      "bodyTextPrefix": "104.1 FREEDOM FM EN BI Listen On air Programs Schedule Station L",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "ErrorUtils caught an error:\n\nCannot listen to an undefined element. [Caught in: Tried to listen to element of type click]\n\nSubsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 180, clientTime: 1795658613, extra: Object, guardList: Array(2), hash: uabswd}"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

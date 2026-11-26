@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Freedom FM">
+  <rect width="32" height="32" rx="6" fill="#141816"/>
+  <path fill="#F3EEE6" d="M7.2 6.4h5.6v19.2H7.2zM7.2 6.4h16.4v4.8H7.2zM7.2 13.6h11.6v4.4H7.2z"/>
+  <circle cx="24.6" cy="24.4" r="2.5" fill="#B42318"/>
+</svg>
