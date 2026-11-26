@@ -29,7 +29,7 @@ export const STATION = {
   maps: "https://maps.google.com/?q=6+Pag-antayan+Cantilan+Surigao+del+Sur",
   video: "https://www.facebook.com/104.1freedomradio/videos/2237158751012506/",
   videoEmbed:
-    "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F104.1freedomradio&tabs=timeline&width=500&height=620&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false",
+    "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F104.1freedomradio%2Fvideos%2F2237158751012506%2F&show_text=true&width=267&t=0",
 };
 
 export const DAYS = [
@@ -366,9 +366,9 @@ export const COPY = {
     pinned: "On this device",
     remove: "Remove",
     footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Not a substitute for the station’s own log.",
-    videoTitle: "Station updates",
-    videoDek: "Follow public posts, announcements, and community updates from DXFR 104.1 Freedom FM.",
-    watch: "Open Facebook page",
+    videoTitle: "From the booth",
+    videoDek: "Watch this video from the official 104.1 Freedom Radio Facebook page.",
+    watch: "Open video on Facebook",
   },
   bi: {
     navAir: "Karon",
@@ -407,8 +407,8 @@ export const COPY = {
     pinned: "Niining device",
     remove: "Tangtanga",
     footerNote: "DXFR 104.1 Freedom FM · Cantilan, Surigao del Sur. Dili kini kapuli sa log sa estasyon.",
-    videoTitle: "Mga update sa estasyon",
-    videoDek: "Sunda ang publikong post, pahibalo, ug update sa komunidad gikan sa DXFR 104.1 Freedom FM.",
-    watch: "Ablihi ang Facebook page",
+    videoTitle: "Gikan sa booth",
+    videoDek: "Tan-awa kining video gikan sa opisyal nga Facebook page sa 104.1 Freedom Radio.",
+    watch: "Ablihi ang video sa Facebook",
   },
 } as const;
