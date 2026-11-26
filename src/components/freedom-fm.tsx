@@ -117,7 +117,8 @@ export function FreedomFm() {
     : null;
 
   return (
-    <div className="min-h-screen bg-paper text-ink freedom-broadcast">\n      <audio ref={audioRef} src={STREAM_URL || undefined} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setPlaying(false); setStreamError("Unable to connect to the live stream."); }} />
+    <div className="min-h-screen bg-paper text-ink freedom-broadcast">
+      <audio ref={audioRef} src={STREAM_URL || undefined} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setPlaying(false); setStreamError("Unable to connect to the live stream."); }} />
       <header className="sticky top-0 z-20 border-b border-ink/10 bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
           <a href="#top" className="flex items-baseline gap-2">
