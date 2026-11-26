@@ -166,7 +166,7 @@ export function FreedomFm() {
               className="inline-flex min-h-11 items-center gap-2 bg-signal px-4 py-2 text-sm font-medium text-paper"
             >
               {playing ? <Pause size={16} /> : <Play size={16} />}
-              {playing ? t.listening : t.listen}
+              {playing ? "ON AIR · PAUSE" : "LISTEN LIVE"}
             </button>
           </div>
         </div>
@@ -210,6 +210,7 @@ export function FreedomFm() {
                 <Radio size={16} />
                 {playing ? t.replay : t.listen}
               </button>
+              {streamError ? <p role="status" className="w-full text-sm text-signal">{streamError}</p> : null}
               <a
                 href="#board"
                 className="inline-flex min-h-11 items-center px-2 text-sm font-medium underline decoration-ink/30 underline-offset-4"
