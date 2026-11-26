@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { ArrowUpRight, Mail, MapPin, Pause, Play, Radio, Trash2 } from "lucide-react";
+import { ArrowUpRight, CalendarDays, House, Mail, MapPin, MessageCircle, Pause, Play, Radio, Trash2, Info } from "lucide-react";
 import {
   COPY,
   DAYS,
@@ -170,7 +170,7 @@ export function FreedomFm() {
             </button>
           </div>
         </div>
-        <nav className="flex gap-4 overflow-x-auto border-t border-ink/10 px-4 py-2 text-sm text-ink/80 md:hidden">
+        <nav className="mobile-top-links flex gap-4 overflow-x-auto border-t border-ink/10 px-4 py-2 text-sm text-ink/80 md:hidden">
           <a href="#air" className="shrink-0 py-1">
             {t.navAir}
           </a>
@@ -515,7 +515,7 @@ export function FreedomFm() {
         </section>
       </main>
 
-      <footer className="border-t border-ink/10">
+      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">\n        <a href="#top"><House size={19} /><span>Home</span></a>\n        <a href="#board"><CalendarDays size={19} /><span>Schedule</span></a>\n        <a href="#line"><MessageCircle size={19} /><span>Messages</span></a>\n        <a href="#station"><Info size={19} /><span>Station</span></a>\n      </nav>\n      <footer className="border-t border-ink/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-ink/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             {STATION.call} {STATION.frequency} {STATION.name}
